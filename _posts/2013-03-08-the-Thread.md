@@ -1,7 +1,7 @@
 ---
 layout : post
-category : .net
-tags : [C#.net开启线程]
+category : net
+tags : [开启线程]
 ---
 
 C#.net开启线程
