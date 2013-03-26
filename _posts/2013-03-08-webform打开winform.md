@@ -1,6 +1,6 @@
 ---
 layout : post
-category : webform
+category : net
 tags : [webform调用winform]
 ---
 
