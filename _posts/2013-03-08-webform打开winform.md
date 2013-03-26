@@ -1,7 +1,7 @@
 ---
 layout : post
 category : net
-tags : [webform调用winform][webform][winform]
+tags : [webform调用winform]
 ---
 
 简单的C#.net webform调用winform
