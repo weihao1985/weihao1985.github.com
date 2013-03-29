@@ -9,7 +9,7 @@ jquery中用append增加节点
 
 <pre>
 
-/*创建节点*/
+ /*创建节点*/
 
 	*$(function(){
 	//1,创建元素节点append
