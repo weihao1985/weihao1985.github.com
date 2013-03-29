@@ -7,7 +7,6 @@ title : Chrome 浏览器命令
 
 Chrome 浏览器命令
 
-<pre>
 ##chrome://about/##
    查看 chrome 所有的命令
 ##chrome://flags##
@@ -35,4 +34,3 @@ Chrome 浏览器命令
    该命令可通过菜单-选项直接访问，可用来控制浏览器各项设置值 
 ##chrome://sync-internals##
    用来显示 chrome 的同步状态 
-</pre>
