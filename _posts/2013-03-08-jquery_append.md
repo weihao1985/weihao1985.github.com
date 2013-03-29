@@ -8,8 +8,10 @@ title : jquery中用append增加节点
 jquery中用append增加节点 
 
 <pre>
+
 /*创建节点*/
-	$(function(){
+
+	*$(function(){
 	//1,创建元素节点append
 	var li = $("<li></li>");
 	$("ul").append($li);
@@ -32,4 +34,5 @@ jquery中用append增加节点
 	<li>苹果</li>
 	<li>梨</li>
 	</ul>
+
 </pre>
