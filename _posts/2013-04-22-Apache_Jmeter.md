@@ -5,7 +5,6 @@ tags : [Apache JMeter,测试工具]
 title : Apache JMeter介绍及配置
 ---
 
-<pre>
 ##Apache JMeter介绍##
 
    Apache JMeter是Apache组织开发的基于Java的压力测试工具。用于对软件做压力测试，
@@ -32,4 +31,3 @@ title : Apache JMeter介绍及配置
    CLASSPATH为{磁盘路径}\jdk1.6.0_10\bin; {磁盘路径}\jdk1.6.0_10\lib\dt.jar;{磁盘路径}\jdk1.6.0_10\lib\tools.jar;
    PATH为{磁盘路径}\jdk1.6.0_10\bin
    4.运行apache-jmeter-2.6\bin\jmeter.bat,打开JMeter工具。
-</pre>
