@@ -7,6 +7,7 @@ title : Apache JMeter介绍及配置
 
 <pre>
 ##Apache JMeter介绍##
+
    Apache JMeter是Apache组织开发的基于Java的压力测试工具。用于对软件做压力测试，
  它最初被设计用于Web应用测试但后来扩展到其他测试领域。 它可以用于测试静态和动态资源例如静态文件、
  Java 小服务程序、CGI 脚本、Java 对象、数据库， FTP 服务器, 等等。
@@ -18,7 +19,9 @@ title : Apache JMeter介绍及配置
  行测试。它可以用于对服务器，网络 或对象模拟繁重的负载来测试它们的强度或分析不同压力类型下的整
  体性能。你可以使用它做性能的图形分析
 或在大并发负载测试你的服务器/脚本/对象。
+
 ##Apache JMeter安装配置##
+
  1.下载apache-jmeter-2.6和jdk 1.6.0_10
    Apache Jmeter下载地址：http://jmeter.apache.org/download_jmeter.cgi 
    Java环境下载：http://www.oracle.com/technetwork/java/javase/downloads/index.html
