@@ -47,3 +47,4 @@ VMware中提供3中上网方式，Bridged(桥接模式)、NAT(网络地址转换
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/77.JPG)
     设置DNS和你主机的DNS相同
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/8.JPG)
+	按上面的配置，配置完成后就可以与主机通讯，连接外网了。
