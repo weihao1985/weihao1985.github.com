@@ -30,18 +30,18 @@ VMware中提供3中上网方式，Bridged(桥接模式)、NAT(网络地址转换
 	如果你想利用VMware创建一个与网内其他机器相隔离的虚拟系统，进行某些特殊的网络调试工作，
 	可以选择Host-only模式。
 
-由于我本地只有一个Ip，所以重点介绍下NAT（网络地址转换模式）
-VMware中点编辑->虚拟网络编辑器，选择VMnet8 Nat设置子网Ip和子网掩码。
+    由于我本地只有一个Ip，所以重点介绍下NAT（网络地址转换模式）
+    VMware中点编辑->虚拟网络编辑器，选择VMnet8 Nat设置子网Ip和子网掩码。
 ![虚拟网络编辑器](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/11.JPG)
-打开NAT设置，添加端口映射，虚拟机Ip地址是你本地主机的IP	
+    打开NAT设置，添加端口映射，虚拟机Ip地址是你本地主机的IP	
 ![NAT设置](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/2.JPG)
-然后打开“网络连接”，设置VMware Network Adapter VMnet8属性
+    然后打开“网络连接”，设置VMware Network Adapter VMnet8属性
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/33.JPG)
-设置ip地址
+    设置ip地址
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/44.JPG)
-在虚拟机redhat中打开system->administration->network。
+    在虚拟机redhat中打开system->administration->network。
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/55.JPG)
-打开 Network configurtion,设置eth0
+    打开 Network configurtion,设置eth0
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/66.JPG)
 	设置address,subnetmask,default gateway address
 ![网络连接](https://github.com/weihao1985/weihao1985.github.com/raw/master/_posts/VMware_redhat_network/77.JPG)
