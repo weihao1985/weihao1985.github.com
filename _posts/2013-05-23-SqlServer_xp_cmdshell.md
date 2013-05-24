@@ -1,110 +1,110 @@
 ---
 layout : post
 category : SqlServer
-tags : [SqlServer,xp_cmdsell,µ¼³öÊý¾Ý]
-title : SqlServerÓÃxp_cmdshellµ¼³öÊý¾Ý
+tags : [SqlServer,xp_cmdsell,å¯¼å‡ºæ•°æ®]
+title : SqlServerç”¨xp_cmdshellå¯¼å‡ºæ•°æ®
 ---
 
-SqlServerÓÃxp_cmdshellµ¼³öÊý¾Ý 
+SqlServerç”¨xp_cmdshellå¯¼å‡ºæ•°æ® 
 
-	SQL ServerµÄµ¼³öµ¼Èë·½Ê½ÓÐ£º
+	SQL Serverçš„å¯¼å‡ºå¯¼å…¥æ–¹å¼æœ‰ï¼š
 
-	1.ÔÚSQL ServerÖÐÌá¹©ÁËµ¼Èëµ¼³öµÄ½çÃæ²Ù×÷¡£ 
-	2.ÔÚ½çÃæ²Ù×÷ÖÐÓÖ·Ö¡¾¸´ÖÆÒ»¸ö»ò¶à¸ö±í»òÊÓÍ¼µÄÊý¾Ý¡¿ºÍ¡¾±àÐ´²éÑ¯ÒÔÖ¸¶¨Òª´«ÊäµÄÊý¾Ý¡¿Á½ÖÖÄ£Ê½£¬µÚÒ»ÖÖÊÇÖ±½Ó¶Ô±í¡¢ÊÓÍ¼½øÐÐÈ«²¿×Ö¶Î¡¢¼ÇÂ¼½øÐÐµ¼³ö£¬¶øµÚ¶þÖÖ¾ÍÊÇ¿ÉÒÔÍ¨¹ýSQLÓï¾äÀ´¿ØÖÆµ¼³öµ¼ÈëµÄ×Ö¶ÎºÍÐÐ¡£
-	3.Ê¹ÓÃ ¼òµ¥µ«ÓÐÓÃµÄSQL½Å±¾ ÖÐµÄ¡¾±í¸´ÖÆ¡¿ÕâÀïÃæµÄ·½·¨¡£
-	4.ÔÙÒ»ÖÖ¾ÍÊÇÔÚÃüÁîÐÐÖÐÊ¹ÓÃbcpÃüÁîÀ´µ¼Èëµ¼³öÊý¾Ý£¬ÐèÒªÌØ±ðËµÃ÷µÄÊÇ£¬ÕâÊÇ¶Ô´óÊý¾ÝÁ¿µ¼Èëµ¼³ö¾ÍºÃµÄ°ì·¨¡£
+	1.åœ¨SQL Serverä¸­æä¾›äº†å¯¼å…¥å¯¼å‡ºçš„ç•Œé¢æ“ä½œã€‚ 
+	2.åœ¨ç•Œé¢æ“ä½œä¸­åˆåˆ†ã€å¤åˆ¶ä¸€ä¸ªæˆ–å¤šä¸ªè¡¨æˆ–è§†å›¾çš„æ•°æ®ã€‘å’Œã€ç¼–å†™æŸ¥è¯¢ä»¥æŒ‡å®šè¦ä¼ è¾“çš„æ•°æ®ã€‘ä¸¤ç§æ¨¡å¼ï¼Œç¬¬ä¸€ç§æ˜¯ç›´æŽ¥å¯¹è¡¨ã€è§†å›¾è¿›è¡Œå…¨éƒ¨å­—æ®µã€è®°å½•è¿›è¡Œå¯¼å‡ºï¼Œè€Œç¬¬äºŒç§å°±æ˜¯å¯ä»¥é€šè¿‡SQLè¯­å¥æ¥æŽ§åˆ¶å¯¼å‡ºå¯¼å…¥çš„å­—æ®µå’Œè¡Œã€‚
+	3.ä½¿ç”¨ ç®€å•ä½†æœ‰ç”¨çš„SQLè„šæœ¬ ä¸­çš„ã€è¡¨å¤åˆ¶ã€‘è¿™é‡Œé¢çš„æ–¹æ³•ã€‚
+	4.å†ä¸€ç§å°±æ˜¯åœ¨å‘½ä»¤è¡Œä¸­ä½¿ç”¨bcpå‘½ä»¤æ¥å¯¼å…¥å¯¼å‡ºæ•°æ®ï¼Œéœ€è¦ç‰¹åˆ«è¯´æ˜Žçš„æ˜¯ï¼Œè¿™æ˜¯å¯¹å¤§æ•°æ®é‡å¯¼å…¥å¯¼å‡ºå°±å¥½çš„åŠžæ³•ã€‚
 
-	--Õû¸ö±íµ¼³ö(out)
-	bcp Êý¾Ý¿âÃû.dbo.±íÃû out c:\table.txt -S"Êý¾Ý¿âÊµÀý" -U"ÓÃ»§" -P"ÃÜÂë" -c 
+	--æ•´ä¸ªè¡¨å¯¼å‡º(out)
+	bcp æ•°æ®åº“å.dbo.è¡¨å out c:\table.txt -S"æ•°æ®åº“å®žä¾‹" -U"ç”¨æˆ·" -P"å¯†ç " -c 
 
-	--Ê¹ÓÃSQLÓï¾äµ¼³ö(queryout)
-	bcp "select * from Êý¾Ý¿âÃû.dbo.±íÃû" queryout c:\table.txt -S Êý¾Ý¿âÊµÀý -U"ÓÃ»§" -P"ÃÜÂë" -c
+	--ä½¿ç”¨SQLè¯­å¥å¯¼å‡º(queryout)
+	bcp "select * from æ•°æ®åº“å.dbo.è¡¨å" queryout c:\table.txt -S æ•°æ®åº“å®žä¾‹ -U"ç”¨æˆ·" -P"å¯†ç " -c
 
-	--ÉèÖÃ×Ö¶Î·Ö¸ô·ûºÍÐÐ·Ö¸ô·û(-c -t"," -r"\n"),²»ÏëÊäÈë×Ö¶ÎÀàÐÍµÈÇëÅäºÏ-cÒ»ÆðÊ¹ÓÃ
-	bcp "select * from Êý¾Ý¿âÃû.dbo.±íÃû" queryout c:\table.txt -S Êý¾Ý¿âÊµÀý -U"ÓÃ»§" -P"ÃÜÂë" -c -t"," -r"\n"
+	--è®¾ç½®å­—æ®µåˆ†éš”ç¬¦å’Œè¡Œåˆ†éš”ç¬¦(-c -t"," -r"\n"),ä¸æƒ³è¾“å…¥å­—æ®µç±»åž‹ç­‰è¯·é…åˆ-cä¸€èµ·ä½¿ç”¨
+	bcp "select * from æ•°æ®åº“å.dbo.è¡¨å" queryout c:\table.txt -S æ•°æ®åº“å®žä¾‹ -U"ç”¨æˆ·" -P"å¯†ç " -c -t"," -r"\n"
 
-	--Ö¸¶¨Ã¿Åúµ¼ÈëÊý¾ÝµÄÐÐÊý¡¢Ö¸¶¨·þÎñÆ÷·¢³ö»ò½ÓÊÕµÄÃ¿¸öÍøÂçÊý¾Ý°üµÄ×Ö½ÚÊý(-k -b5000 -a65535)
-	bcp "select * from Êý¾Ý¿âÃû.dbo.±íÃû" queryout c:\table.txt -S Êý¾Ý¿âÊµÀý -U"ÓÃ»§" -P"ÃÜÂë" -c -t"," -r"\n" -k -b5000 -a65535
+	--æŒ‡å®šæ¯æ‰¹å¯¼å…¥æ•°æ®çš„è¡Œæ•°ã€æŒ‡å®šæœåŠ¡å™¨å‘å‡ºæˆ–æŽ¥æ”¶çš„æ¯ä¸ªç½‘ç»œæ•°æ®åŒ…çš„å­—èŠ‚æ•°(-k -b5000 -a65535)
+	bcp "select * from æ•°æ®åº“å.dbo.è¡¨å" queryout c:\table.txt -S æ•°æ®åº“å®žä¾‹ -U"ç”¨æˆ·" -P"å¯†ç " -c -t"," -r"\n" -k -b5000 -a65535
 
-	--ÔÚ²éÑ¯·ÖÎöÆ÷ÉÏÖ´ÐÐ(EXEC master..xp_cmdshell)
-	EXEC master..xp_cmdshell 'bcp "select * from Êý¾Ý¿âÃû.dbo.±íÃû" queryout c:\table.txt -S Êý¾Ý¿âÊµÀý -U"ÓÃ»§" -P"ÃÜÂë" -c'
+	--åœ¨æŸ¥è¯¢åˆ†æžå™¨ä¸Šæ‰§è¡Œ(EXEC master..xp_cmdshell)
+	EXEC master..xp_cmdshell 'bcp "select * from æ•°æ®åº“å.dbo.è¡¨å" queryout c:\table.txt -S æ•°æ®åº“å®žä¾‹ -U"ç”¨æˆ·" -P"å¯†ç " -c'
 
-	--°ÑSQLÓï¾äÉú³ÉÒ»¸ö.sqlÎÄ¼þ£¬È»ºóµ÷ÓÃ
-	--×¢£ºÂ·¾¶µÄÎÄ¼þ¼ÐÃû³ÆÖÐ¼ä²»ÄÜÓÐ¿Õ¸ñ
-	exec master..xp_cmdshell 'osql -S Êý¾Ý¿âÊµÀý -U ÓÃ»§ -P ÃÜÂë -i    C:\cmdshellTest.sql'  
+	--æŠŠSQLè¯­å¥ç”Ÿæˆä¸€ä¸ª.sqlæ–‡ä»¶ï¼Œç„¶åŽè°ƒç”¨
+	--æ³¨ï¼šè·¯å¾„çš„æ–‡ä»¶å¤¹åç§°ä¸­é—´ä¸èƒ½æœ‰ç©ºæ ¼
+	exec master..xp_cmdshell 'osql -S æ•°æ®åº“å®žä¾‹ -U ç”¨æˆ· -P å¯†ç  -i    C:\cmdshellTest.sql'  
 
-	--½«Êý¾Ýµ¼Èëµ½currency±íÖÐ
-	EXEC master..xp_cmdshell 'bcp Êý¾Ý¿âÃû.dbo.±íÃû in c:\table.txt -c -T'
-	--µ¼ÈëÊý¾ÝÒ²Í¬Ñù¿ÉÒÔÊ¹ÓÃ-FºÍ-LÑ¡ÏîÀ´Ñ¡Ôñµ¼ÈëÊý¾ÝµÄ¼ÇÂ¼ÐÐ¡£
-	EXEC master..xp_cmdshell 'bcp Êý¾Ý¿âÃû.dbo.±íÃû in c:\table.txt -c -F 10 -L 13 -T' 
+	--å°†æ•°æ®å¯¼å…¥åˆ°currencyè¡¨ä¸­
+	EXEC master..xp_cmdshell 'bcp æ•°æ®åº“å.dbo.è¡¨å in c:\table.txt -c -T'
+	--å¯¼å…¥æ•°æ®ä¹ŸåŒæ ·å¯ä»¥ä½¿ç”¨-Få’Œ-Lé€‰é¡¹æ¥é€‰æ‹©å¯¼å…¥æ•°æ®çš„è®°å½•è¡Œã€‚
+	EXEC master..xp_cmdshell 'bcp æ•°æ®åº“å.dbo.è¡¨å in c:\table.txt -c -F 10 -L 13 -T' 
 
-	ÔÚÊ¹ÓÃÃüÁîxp_cmdshellµÄÊ±ºòÐèÒªÉèÖÃÈ¨ÏÞ£º
+	åœ¨ä½¿ç”¨å‘½ä»¤xp_cmdshellçš„æ—¶å€™éœ€è¦è®¾ç½®æƒé™ï¼š
 
 
-	/*MSsql2005 ÈçºÎÆôÓÃxp_cmdshell
-	Ä¬ÈÏÇé¿öÏÂ,sql server2005°²×°Íêºó,xp_cmdshellÊÇ½ûÓÃµÄ(¿ÉÄÜÊÇ°²È«¿¼ÂÇ),Èç¹ûÒªÊ¹ÓÃËü,¿É°´ÒÔÏÂ²½Öè
+	/*MSsql2005 å¦‚ä½•å¯ç”¨xp_cmdshell
+	é»˜è®¤æƒ…å†µä¸‹,sql server2005å®‰è£…å®ŒåŽ,xp_cmdshellæ˜¯ç¦ç”¨çš„(å¯èƒ½æ˜¯å®‰å…¨è€ƒè™‘),å¦‚æžœè¦ä½¿ç”¨å®ƒ,å¯æŒ‰ä»¥ä¸‹æ­¥éª¤
 	*/
-	-- ÔÊÐíÅäÖÃ¸ß¼¶Ñ¡Ïî
+	-- å…è®¸é…ç½®é«˜çº§é€‰é¡¹
 	EXEC sp_configure 'show advanced options', 1
 	GO
-	-- ÖØÐÂÅäÖÃ
+	-- é‡æ–°é…ç½®
 	RECONFIGURE
 	GO
-	-- ÆôÓÃxp_cmdshell
+	-- å¯ç”¨xp_cmdshell
 	EXEC sp_configure 'xp_cmdshell', 1
 	GO
-	--ÖØÐÂÅäÖÃ
+	--é‡æ–°é…ç½®
 	RECONFIGURE
 	GO
 
-	--Ö´ÐÐÏëÒªµÄxp_cmdshellÓï¾ä
+	--æ‰§è¡Œæƒ³è¦çš„xp_cmdshellè¯­å¥
 	Exec xp_cmdshell 'query user'
 	GO
 
-	--ÓÃÍêºó,Òª¼ÇµÃ½«xp_cmdshell½ûÓÃ(³öÓÚ°²È«¿¼ÂÇ)
-	-- ÔÊÐíÅäÖÃ¸ß¼¶Ñ¡Ïî
+	--ç”¨å®ŒåŽ,è¦è®°å¾—å°†xp_cmdshellç¦ç”¨(å‡ºäºŽå®‰å…¨è€ƒè™‘)
+	-- å…è®¸é…ç½®é«˜çº§é€‰é¡¹
 	EXEC sp_configure 'show advanced options', 1
 	GO
-	-- ÖØÐÂÅäÖÃ
+	-- é‡æ–°é…ç½®
 	RECONFIGURE
 	GO
-	-- ½ûÓÃxp_cmdshell
+	-- ç¦ç”¨xp_cmdshell
 	EXEC sp_configure 'xp_cmdshell', 0
 	GO
-	--ÖØÐÂÅäÖÃ
+	--é‡æ–°é…ç½®
 	RECONFIGURE
 	GO
 
-	Óö¼ûµÄ´íÎó£º
-	1¡¢·¢ÉúÒÔÏÂ´íÎó£º
-	[Error][Microsoft][Native]Error = [Microsoft][SQL Native Client]ÎÞ·¨´ò¿ª BCP Ö÷Êý¾ÝÎÄ¼þ
+	é‡è§çš„é”™è¯¯ï¼š
+	1ã€å‘ç”Ÿä»¥ä¸‹é”™è¯¯ï¼š
+	[Error][Microsoft][Native]Error = [Microsoft][SQL Native Client]æ— æ³•æ‰“å¼€ BCP ä¸»æ•°æ®æ–‡ä»¶
 
-	Ê¹ÓÃÈçÏÂÃüÁî£º
+	ä½¿ç”¨å¦‚ä¸‹å‘½ä»¤ï¼š
 	EXEC xp_cmdshell 'ECHO %USERDOMAIN%\%USERNAME%'
-	·µ»Ø £ºNT AUTHORITY\NETWORK SERVICE
+	è¿”å›ž ï¼šNT AUTHORITY\NETWORK SERVICE
 
-	È»ºóÔÚÅäÖÃ¹ÜÀíÆ÷£¨configuration manager)ÀïÃæµÄSQL server2005·þÎñÀï´ò¿ª£¬¿´µ½µÇÂ½ÄÚÖÃÕËºÅÎªNetwork service,
-	¸Ä³Élocal systemÎÊÌâ½â¾ö¡£
+	ç„¶åŽåœ¨é…ç½®ç®¡ç†å™¨ï¼ˆconfiguration manager)é‡Œé¢çš„SQL server2005æœåŠ¡é‡Œæ‰“å¼€ï¼Œçœ‹åˆ°ç™»é™†å†…ç½®è´¦å·ä¸ºNetwork service,
+	æ”¹æˆlocal systemé—®é¢˜è§£å†³ã€‚
 
-	2¡¢SQLState = 22018, NativeError = 0
-	Error = [Microsoft][SQL Native Client]¶ÔÓÚÔìÐÍËµÃ÷ÎÞÐ§µÄ×Ö·ûÖµ
+	2ã€SQLState = 22018, NativeError = 0
+	Error = [Microsoft][SQL Native Client]å¯¹äºŽé€ åž‹è¯´æ˜Žæ— æ•ˆçš„å­—ç¬¦å€¼
 
-	Èç¹ûÊÇ±íÓë±íÖ®¼äµÄÊý¾Ýµ¼Èë£¬¿ÉÓÃ -N, »òÕß -w, ¶ø²»ÒªÓÃ -c
-	ÓÃ-cµÄ»°, Èç¹ûµ¼³öµÄÄ³¸öÁÐÖÐµÄÊý¾ÝÖÐ°üº¬·Ö¸ô·û, Ôò»áµ¼ÖÂÄã bcp µ¼ÈëµÄÊ±ºòÊ§°Ü
-	-N »òÕß -w ²»»áÓÐÕâ¸öÎÊÌâ 
-	bcpÓÃ·¨: bcp {dbtable | query} {in | out | queryout | format} Êý¾ÝÎÄ¼þ
-	  [-m ×î´ó´íÎóÊý]             [-f ¸ñÊ½»¯ÎÄ¼þ]         [-e ´íÎóÎÄ¼þ]
-	  [-F Ê×ÐÐ]                       [-L Ä©ÐÐ]                  [-b Åú´óÐ¡]
-	  [-n ±¾»úÀàÐÍ]                 [-c ×Ö·ûÀàÐÍ]            [-w ¿í×Ö·ûÀàÐÍ]
-	  [-N ½«·ÇÎÄ±¾±£³ÖÎª±¾»úÀàÐÍ] [-V ÎÄ¼þ¸ñÊ½°æ±¾]     [-q ´øÒýºÅµÄ±êÊ¶·û]
-	  [-C ´úÂëÒ³ËµÃ÷·û]           [-t ×Ö¶ÎÖÕÖ¹·û]       [-r ÐÐÖÕÖ¹·û]
-	  [-i ÊäÈëÎÄ¼þ]                   [-o Êä³öÎÄ¼þ]         [-a Êý¾Ý°ü´óÐ¡]
-	  [-S ·þÎñÆ÷Ãû³Æ]              [-U ÓÃ»§Ãû]            [-P ÃÜÂë]
-	  [-T ¿ÉÐÅÁ¬½Ó]                  [-v °æ±¾]                [-R ÔÊÐíÊ¹ÓÃÇøÓòÉèÖÃ]
-	  [-k ±£Áô¿ÕÖµ]                  [-E ±£Áô±êÊ¶Öµ]
-	  [-h"¼ÓÔØÌáÊ¾"]                 [-x Éú³É xml ¸ñÊ½»¯ÎÄ¼þ]
-	ÆäËü£º
-	ÐÂ½¨²éÑ¯£­>ÊäÈëSQL²éÑ¯Óï¾ä£¬Ö´ÐÐµÃµ½ÐèÒªµÄ½á¹û£¬ÔÚ²éÑ¯½á¹ûÀ¸µã»÷Êó±êÓÒ¼ü£­>½«½á¹ûÁí´æÎª 
-	µ¼³öÎÄ¼þ(*csv)¼´¿Éµ¼³öÎª ¶ººÅ·Ö¸îµÄexcelÎÄ¼þ¡£ 
-	´ËÊ±£¬ÓÉÓÚÃ»ÓÐ·ÖÁÐ£¬ËùÒÔÓ¦ÏÈÐÂ½¨Ò»¸ö¿Õ°×µÄExcelÎÄµµ£¬È»ºóÑ¡Ôñ´ò¿ª¸Õ²Å±£´æµÄµÄÎÄ¼þ; 
-	È»ºóËü»á³öÏÖÎÄ±¾µ¼Èë²½Öè£¬Ñ¡ÖÐ·Ö¸î·ûºÅ£¬ÏÂÒ»²½£¬Ñ¡ÖÐ ¶ººÅ£¬Ô¤ÀÀÇøÓòÕý³££¬È»ºóÔÚÏÂÒ»²½ºÍÍê³É£¬±£´æÎªexcelÎÄ¼þ
+	å¦‚æžœæ˜¯è¡¨ä¸Žè¡¨ä¹‹é—´çš„æ•°æ®å¯¼å…¥ï¼Œå¯ç”¨ -N, æˆ–è€… -w, è€Œä¸è¦ç”¨ -c
+	ç”¨-cçš„è¯, å¦‚æžœå¯¼å‡ºçš„æŸä¸ªåˆ—ä¸­çš„æ•°æ®ä¸­åŒ…å«åˆ†éš”ç¬¦, åˆ™ä¼šå¯¼è‡´ä½  bcp å¯¼å…¥çš„æ—¶å€™å¤±è´¥
+	-N æˆ–è€… -w ä¸ä¼šæœ‰è¿™ä¸ªé—®é¢˜ 
+	bcpç”¨æ³•: bcp {dbtable | query} {in | out | queryout | format} æ•°æ®æ–‡ä»¶
+	  [-m æœ€å¤§é”™è¯¯æ•°]             [-f æ ¼å¼åŒ–æ–‡ä»¶]         [-e é”™è¯¯æ–‡ä»¶]
+	  [-F é¦–è¡Œ]                       [-L æœ«è¡Œ]                  [-b æ‰¹å¤§å°]
+	  [-n æœ¬æœºç±»åž‹]                 [-c å­—ç¬¦ç±»åž‹]            [-w å®½å­—ç¬¦ç±»åž‹]
+	  [-N å°†éžæ–‡æœ¬ä¿æŒä¸ºæœ¬æœºç±»åž‹] [-V æ–‡ä»¶æ ¼å¼ç‰ˆæœ¬]     [-q å¸¦å¼•å·çš„æ ‡è¯†ç¬¦]
+	  [-C ä»£ç é¡µè¯´æ˜Žç¬¦]           [-t å­—æ®µç»ˆæ­¢ç¬¦]       [-r è¡Œç»ˆæ­¢ç¬¦]
+	  [-i è¾“å…¥æ–‡ä»¶]                   [-o è¾“å‡ºæ–‡ä»¶]         [-a æ•°æ®åŒ…å¤§å°]
+	  [-S æœåŠ¡å™¨åç§°]              [-U ç”¨æˆ·å]            [-P å¯†ç ]
+	  [-T å¯ä¿¡è¿žæŽ¥]                  [-v ç‰ˆæœ¬]                [-R å…è®¸ä½¿ç”¨åŒºåŸŸè®¾ç½®]
+	  [-k ä¿ç•™ç©ºå€¼]                  [-E ä¿ç•™æ ‡è¯†å€¼]
+	  [-h"åŠ è½½æç¤º"]                 [-x ç”Ÿæˆ xml æ ¼å¼åŒ–æ–‡ä»¶]
+	å…¶å®ƒï¼š
+	æ–°å»ºæŸ¥è¯¢ï¼>è¾“å…¥SQLæŸ¥è¯¢è¯­å¥ï¼Œæ‰§è¡Œå¾—åˆ°éœ€è¦çš„ç»“æžœï¼Œåœ¨æŸ¥è¯¢ç»“æžœæ ç‚¹å‡»é¼ æ ‡å³é”®ï¼>å°†ç»“æžœå¦å­˜ä¸º 
+	å¯¼å‡ºæ–‡ä»¶(*csv)å³å¯å¯¼å‡ºä¸º é€—å·åˆ†å‰²çš„excelæ–‡ä»¶ã€‚ 
+	æ­¤æ—¶ï¼Œç”±äºŽæ²¡æœ‰åˆ†åˆ—ï¼Œæ‰€ä»¥åº”å…ˆæ–°å»ºä¸€ä¸ªç©ºç™½çš„Excelæ–‡æ¡£ï¼Œç„¶åŽé€‰æ‹©æ‰“å¼€åˆšæ‰ä¿å­˜çš„çš„æ–‡ä»¶; 
+	ç„¶åŽå®ƒä¼šå‡ºçŽ°æ–‡æœ¬å¯¼å…¥æ­¥éª¤ï¼Œé€‰ä¸­åˆ†å‰²ç¬¦å·ï¼Œä¸‹ä¸€æ­¥ï¼Œé€‰ä¸­ é€—å·ï¼Œé¢„è§ˆåŒºåŸŸæ­£å¸¸ï¼Œç„¶åŽåœ¨ä¸‹ä¸€æ­¥å’Œå®Œæˆï¼Œä¿å­˜ä¸ºexcelæ–‡ä»¶
