@@ -1,11 +1,11 @@
 ---
 layout : post
-category : mysql导出和导入文件
-tags : [mysql导出和导入文件,INTO OUTFILE,load data local infile]
-title : mysql导出和导入文件
+category : mysql导出和导入
+tags : [mysql导出和导入,INTO OUTFILE,load data local infile]
+title : mysql导出和导入
 ---
 
-## mysql导出和导入文件 ##
+## mysql导出和导入 ##
 
 使用SELECT Field1，Field2 INTO OUTFILE 以逗号分隔字段的方式将数据导出到一个文件中
 
